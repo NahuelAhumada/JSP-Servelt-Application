@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Image upload form</title>
 </head>
 <body>
+<form action="ImageUpload" method="post" enctype="multipart/form-data">
+Select imaages <input type="file" name="files" multiple>
+
+<input type="submit" value="upload" multiple>
+</form>
 
 </body>
 </html>
