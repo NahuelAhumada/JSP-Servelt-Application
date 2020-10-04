@@ -14,6 +14,8 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.nahuel.hibernate.DAO.FilesDAO;
+import org.nahuel.hibernate.entity.Files;
 
 
 @WebServlet("/ImageUpload")
@@ -33,6 +35,7 @@ public class ImageUpload extends HttpServlet {
 				System.out.println(name);
 				try {
 					image.write(new File(path+name));
+					new FilesDAO().addFileDetails(new Files(name));;
 				} catch (Exception e) {
 					System.out.println("Error archivo");
 					e.printStackTrace();
