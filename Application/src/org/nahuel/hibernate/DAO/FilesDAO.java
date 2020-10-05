@@ -27,7 +27,7 @@ public class FilesDAO {
 		session.beginTransaction();
 		//Entity class name
 		List<Files>files=session.createQuery("from files").getResultList();
-		session.getTransaction().commit();
+		//session.getTransaction().commit();
 		return files;
 		
 	}

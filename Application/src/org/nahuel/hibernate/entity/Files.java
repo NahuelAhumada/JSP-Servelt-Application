@@ -49,5 +49,10 @@ public class Files {
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
+
+	@Override
+	public String toString() {
+		return "Files [id=" + id + ", file_name=" + file_name + ", label=" + label + ", caption=" + caption + "]";
+	}
 	
 }

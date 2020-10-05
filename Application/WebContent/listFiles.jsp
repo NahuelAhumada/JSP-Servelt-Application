@@ -8,5 +8,6 @@
 </head>
 <body>
 listing images
+<%= request.getAttribute("files")%>
 </body>
 </html>
