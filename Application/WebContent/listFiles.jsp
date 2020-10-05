@@ -9,11 +9,12 @@
 <title>Listing Images</title>
 </head>
 <body>
-listing images
+<h1>listing images</h1>
 <%	
+	String path=(String)request.getAttribute("path");
 	List<Files> files= (List<Files>)request.getAttribute("files");
 	for(Files file: files){
-		out.print("<br>"+file+"</br>");
+		out.print("<br/><img src="+path+file.getFile_name()+">");
 	}
 %>
 </body>
