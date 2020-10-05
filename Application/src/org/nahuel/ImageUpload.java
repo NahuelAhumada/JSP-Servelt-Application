@@ -25,6 +25,12 @@ public class ImageUpload extends HttpServlet {
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
+		
+	}
+	
+	public void filesUpload(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		ServletFileUpload upload= new ServletFileUpload(new DiskFileItemFactory());
 		
 		try {
@@ -45,7 +51,7 @@ public class ImageUpload extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-	
 
 }
