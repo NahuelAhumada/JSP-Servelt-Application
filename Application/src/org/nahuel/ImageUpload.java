@@ -30,12 +30,21 @@ public class ImageUpload extends HttpServlet {
 		case "filesUpload":
 			filesUpload(request, response);
 			break;
+		case "listingImages":
+			listingImages(request, response);
+			break;
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
 	}
 	
+	private void listingImages(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.getRequestDispatcher("listFiles.jsp").forward(request, response);
+		
+	}
+
 	public void filesUpload(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		ServletFileUpload upload= new ServletFileUpload(new DiskFileItemFactory());
@@ -51,7 +60,7 @@ public class ImageUpload extends HttpServlet {
 					new FilesDAO().addFileDetails(new Files(name));
 					image.write(file);					
 				}
-				
+				listingImages(request, response);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
