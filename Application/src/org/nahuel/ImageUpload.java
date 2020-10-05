@@ -27,9 +27,10 @@ public class ImageUpload extends HttpServlet {
 			throws ServletException, IOException {
 		String action= request.getParameter("action");
 		switch(action) {
-		case "filesUpload":
-			filesUpload(request, response);
+		case "listingImages":
+			listingImages(request, response);
 			break;
+		
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
@@ -40,8 +41,8 @@ public class ImageUpload extends HttpServlet {
 			throws ServletException, IOException {
 		String action= request.getParameter("action");
 		switch(action) {
-		case "listingImages":
-			listingImages(request, response);
+		case "filesUpload":
+			filesUpload(request, response);
 			break;
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
