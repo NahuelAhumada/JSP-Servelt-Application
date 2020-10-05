@@ -25,7 +25,14 @@ public class ImageUpload extends HttpServlet {
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
+		String action= request.getParameter("action");
+		switch(action) {
+		case "filesUpload":
+			filesUpload(request, response);
+			break;
+		default:
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 		
 	}
 	
@@ -39,15 +46,14 @@ public class ImageUpload extends HttpServlet {
 				String name=image.getName();
 				try{name=name.substring(name.lastIndexOf("\\")+1);}catch(Exception e) {};
 				System.out.println(name);
-				try {
-					image.write(new File(path+name));
-					new FilesDAO().addFileDetails(new Files(name));;
-				} catch (Exception e) {
-					System.out.println("Error archivo");
-					e.printStackTrace();
+				File file=new File(path+name);
+				if(!file.exists()) {
+					new FilesDAO().addFileDetails(new Files(name));
+					image.write(file);					
 				}
+				
 			}
-		} catch (FileUploadException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
