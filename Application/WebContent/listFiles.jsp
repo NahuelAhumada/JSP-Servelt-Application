@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Images</title>
+<title>Listing Images</title>
 </head>
 <body>
 listing images

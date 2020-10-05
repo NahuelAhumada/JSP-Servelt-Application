@@ -12,6 +12,6 @@ Select imaages <input type="file" name="files" multiple>
 
 <input type="submit" value="upload" multiple>
 </form>
-
+<a href="${pageContext.request.contextPath}/ImageUpload?action=listingImages">View available images</a>
 </body>
 </html>
