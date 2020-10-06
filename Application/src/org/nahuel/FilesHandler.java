@@ -94,7 +94,7 @@ public class FilesHandler extends HttpServlet {
 		String label =request.getParameter("label");
 		String caption=request.getParameter("caption");
 		Files file=new Files(fileId, fileName, label, caption);
-		new FilesDAO().updateInformation(file);
+		new FilesDAO().updateInformation(fileId,label,caption);
 		listingImages(request, response);
 	}
 }
