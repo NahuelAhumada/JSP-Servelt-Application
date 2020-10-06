@@ -11,12 +11,7 @@
 <body>
 <%! String form; int fileId;%>
 <% 
-	String form="<form action='FilesHandler' method='post'>"+
-				"Label: <input type='text' name='label'/><br></br>"+
-				"Caption: <input type='text' name='caption'/><br></br>"+
-				"<input type='hidden' name='filedId' value='"+fileId+"'/>"+
-				"<input type='submit' value='Update'/>";
-%>
+	%>
 <h1>Listing images</h1>
 
 <table border="1">
@@ -30,14 +25,21 @@
 	List<Files> files= (List<Files>)request.getAttribute("files");
 	for(Files file: files){
 		out.print("<tr><td><img src="+path+file.getFile_name()+" height='200'></td>");
+		fileId=file.getId();
 		out.print("<td><ul> "+
 				"<li> File id: "+file.getId()+"</li>"+
 				"<li> File name: "+file.getFile_name()+"</li>"+
 				"<li> File label: "+file.getLabel()+"</li>"+
 				"<li> File caption: "+file.getCaption()+"</li>"+
-				"</ul></td>"+
-				"<td>"+form+"</td></tr>"
-				);
+				"</ul></td>");
+		String form="<form action='FilesHandler' method='post'>"+
+				"Label: <input type='text' name='label'/><br></br>"+
+				"Caption: <input type='text' name='caption'/><br></br>"+
+				"<input type='hidden' name='fileId' value='"+fileId+"'/>"+
+				"<input type='hidden' name='action' value='updateInformation'/>"+
+				"<input type='submit' value='Update'/>";
+		out.print("<td>"+form+"</td></tr>");
+				
 	}
 %>
 

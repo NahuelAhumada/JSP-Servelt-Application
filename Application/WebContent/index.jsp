@@ -7,11 +7,11 @@
 <title>Image upload form</title>
 </head>
 <body>
-<form action="ImageUpload?action=filesUpload" method="post" enctype="multipart/form-data">
+<form action="FilesHandler?action=filesUpload" method="post" enctype="multipart/form-data">
 Select imaages <input type="file" name="files" multiple>
 
 <input type="submit" value="upload" multiple>
 </form>
-<a href="${pageContext.request.contextPath}/ImageUpload?action=listingImages">View available images</a>
+<a href="${pageContext.request.contextPath}/FilesHandler?action=listingImages">View available images</a>
 </body>
 </html>

@@ -18,7 +18,7 @@ import org.nahuel.hibernate.DAO.FilesDAO;
 import org.nahuel.hibernate.entity.Files;
 
 
-@WebServlet("/ImageUpload")
+@WebServlet("/FilesHandler")
 public class FilesHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public String path="D:/JavaCourseMaterial/Images/";
@@ -44,12 +44,17 @@ public class FilesHandler extends HttpServlet {
 		case "filesUpload":
 			filesUpload(request, response);
 			break;
+		case "updateInformation":
+			updateInformation(request,response);
+			break;
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
 	}
 	
+	
+
 	private void listingImages(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		List<Files>files=new FilesDAO().listFiles();
@@ -82,5 +87,12 @@ public class FilesHandler extends HttpServlet {
 		}
 		listingImages(request, response);
 	}
-
+	private void updateInformation(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		int fileId = Integer.parseInt(request.getParameter("fileId"));
+		String label =request.getParameter("label");
+		String caption=request.getParameter("caption");
+		Files file=new Files(fileId, label, caption);
+		
+	}
 }
