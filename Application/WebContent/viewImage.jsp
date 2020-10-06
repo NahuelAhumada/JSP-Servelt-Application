@@ -24,6 +24,8 @@ if(file.getCaption()!=null){
 	out.print("| Caption: "+file.getCaption());
 }
 %>
+| <a href="${pageContext.request.contextPath}">Home</a>
+| <a href="${pageContext.request.contextPath}/FilesHandler?action=listingImages">List available images</a>
 <hr/>
 <img src="<%=path+file.getFile_name()%> ">
 </body>
