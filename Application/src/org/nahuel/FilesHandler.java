@@ -26,12 +26,14 @@ public class FilesHandler extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String action= request.getParameter("action");
+		System.out.println(action);
 		switch(action) {
 		case "listingImages":
 			listingImages(request, response);
 			break;
 		case "viewImage":
 			viewImage(request,response);
+			break;
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
@@ -43,6 +45,7 @@ public class FilesHandler extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String action= request.getParameter("action");
+		
 		switch(action) {
 		case "filesUpload":
 			filesUpload(request, response);
