@@ -33,6 +33,9 @@ public class FilesHandler extends HttpServlet {
 		case "viewImage":
 			viewImage(request,response);
 			break;
+		case "deleteImage":
+			deleteImage(request,response);
+			break;
 		default:
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
@@ -109,5 +112,9 @@ public class FilesHandler extends HttpServlet {
 		request.setAttribute("file", file);
 		request.setAttribute("path", path);
 		request.getRequestDispatcher("viewImage.jsp").forward(request, response);;
+	}
+	private void deleteImage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		int fileId=Integer.parseInt(request.getParameter("fileId"));
 	}
 }

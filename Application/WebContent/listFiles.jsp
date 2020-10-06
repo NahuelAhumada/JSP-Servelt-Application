@@ -43,7 +43,7 @@
 		out.print("<td><ul><li><a href='"+request.getContextPath()+"/FilesHandler?action=viewImage&fileId="+
 				file.getId()+"'>View Image</a></li>");
 		out.print("<li><a href='"+request.getContextPath()+"/FilesHandler?action=deleteImage&fileId="+
-				file.getId()+"'>Delete Image</a></li></ul></td></tr>");
+				file.getId()+"' onclick=\"if(!confirm('Are you sure you want to delete this image?'))return false\">Delete Image</a></li></ul></td></tr>");
 				
 	}
 %>
