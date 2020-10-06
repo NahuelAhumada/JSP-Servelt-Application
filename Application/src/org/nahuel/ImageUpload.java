@@ -74,13 +74,13 @@ public class ImageUpload extends HttpServlet {
 					new FilesDAO().addFileDetails(new Files(name));
 					image.write(file);					
 				}
-				listingImages(request, response);
+				
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		listingImages(request, response);
 	}
 
 }
