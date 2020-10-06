@@ -41,7 +41,9 @@
 				"<input type='submit' value='Update'/>";
 		out.print("<td>"+form+"</td>");
 		out.print("<td><ul><li><a href='"+request.getContextPath()+"/FilesHandler?action=viewImage&fileId="+
-				file.getId()+"'>View Image</a></li></ul></td></tr>");
+				file.getId()+"'>View Image</a></li>");
+		out.print("<li><a href='"+request.getContextPath()+"/FilesHandler?action=deleteImage&fileId="+
+				file.getId()+"'>Delete Image</a></li></ul></td></tr>");
 				
 	}
 %>
