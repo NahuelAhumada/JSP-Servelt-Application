@@ -36,6 +36,7 @@
 				"Label: <input type='text' name='label'/><br></br>"+
 				"Caption: <input type='text' name='caption'/><br></br>"+
 				"<input type='hidden' name='fileId' value='"+fileId+"'/>"+
+				"<input type='hidden' name='fileName' value='"+file.getFile_name()+"'/>"+
 				"<input type='hidden' name='action' value='updateInformation'/>"+
 				"<input type='submit' value='Update'/>";
 		out.print("<td>"+form+"</td></tr>");

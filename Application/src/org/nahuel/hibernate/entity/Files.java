@@ -21,8 +21,8 @@ public class Files {
 		
 	}
 	
-	public Files(int id, String label, String caption) {
-		super();
+	public Files(int id, String file_name, String label, String caption) {
+		this.file_name=file_name;
 		this.id = id;
 		this.label = label;
 		this.caption = caption;
