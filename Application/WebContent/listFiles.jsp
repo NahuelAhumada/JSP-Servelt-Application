@@ -21,9 +21,20 @@
 	String path=(String)request.getAttribute("path");
 	List<Files> files= (List<Files>)request.getAttribute("files");
 	for(Files file: files){
-		out.print("<tr><td><img src="+path+file.getFile_name()+" height='200'></td></tr>");
+		out.print("<tr><td><img src="+path+file.getFile_name()+" height='200'></td>");
+		out.print("<td><ul> "+
+				"<li> File id: "+file.getId()+"</li>"+
+				"<li> File name: "+file.getFile_name()+"</li>"+
+				"<li> File label: "+file.getLabel()+"</li>"+
+				"<li> File caption: "+file.getCaption()+"</li>"+
+				"</ul></td></tr>"
+				);
 	}
 %>
+
+
+
+
 </table>
 </body>
 </html>
