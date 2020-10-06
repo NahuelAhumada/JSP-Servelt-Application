@@ -32,7 +32,10 @@ public class FilesDAO {
 		
 	}
 	public void updateInformation(Files file) {
-		// TODO Auto-generated method stub
+		Session session=factory.getCurrentSession();
+		session.beginTransaction();
+		session.update(file);
+		session.getTransaction().commit();
 		
 	}
 }
