@@ -104,6 +104,8 @@ public class FilesHandler extends HttpServlet {
 			throws ServletException, IOException{
 		int fileId=Integer.parseInt(request.getParameter("fileId"));
 		Files file=new FilesDAO().getFile(fileId);
-		
+		request.setAttribute("file", file);
+		request.setAttribute("path", path);
+		request.getRequestDispatcher("viewImage.jsp").forward(request, response);;
 	}
 }
