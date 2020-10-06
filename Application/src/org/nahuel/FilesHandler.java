@@ -116,5 +116,7 @@ public class FilesHandler extends HttpServlet {
 	private void deleteImage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 		int fileId=Integer.parseInt(request.getParameter("fileId"));
+		Files file=new FilesDAO().getFile(fileId);
+		new FilesDAO().deleteFile(fileId);
 	}
 }
