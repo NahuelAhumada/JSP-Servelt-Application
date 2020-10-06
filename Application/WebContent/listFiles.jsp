@@ -19,7 +19,7 @@
 <th>Preview</th>
 <th>Available information</th>
 <th>Update information</th>
-<th>Action</th>
+<th>Available Action</th>
 <%	
 	String path=(String)request.getAttribute("path");
 	List<Files> files= (List<Files>)request.getAttribute("files");
@@ -39,7 +39,9 @@
 				"<input type='hidden' name='fileName' value='"+file.getFile_name()+"'/>"+
 				"<input type='hidden' name='action' value='updateInformation'/>"+
 				"<input type='submit' value='Update'/>";
-		out.print("<td>"+form+"</td></tr>");
+		out.print("<td>"+form+"</td>");
+		out.print("<td><ul><li><a href='"+request.getContextPath()+"/FilesHandler?action=viewImage&fileId"+
+				file.getId()+"'>View Image</a></li></ul></td></tr>");
 				
 	}
 %>
