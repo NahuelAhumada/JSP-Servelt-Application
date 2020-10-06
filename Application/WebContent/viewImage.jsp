@@ -13,17 +13,18 @@
 	path=(String)request.getAttribute("path");
 %>
 
-File ID: <%= file.getId()%> | File Name: <%= file.getFile_name() %> |
+File ID: <%= file.getId()%> | File Name: <%= file.getFile_name() %> 
 <%
 if(file.getLabel()!=null){
-	out.print("Label: "+file.getLabel());
+	out.print("| Label: "+file.getLabel());
 }
 %>
 <% 
 if(file.getCaption()!=null){
-	out.print("Caption: "+file.getCaption());
+	out.print("| Caption: "+file.getCaption());
 }
 %>
 <hr/>
+<img src="<%=path+file.getFile_name()%> ">
 </body>
 </html>
