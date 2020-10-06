@@ -31,4 +31,8 @@ public class FilesDAO {
 		return files;
 		
 	}
+	public void updateInformation(Files file) {
+		// TODO Auto-generated method stub
+		
+	}
 }
