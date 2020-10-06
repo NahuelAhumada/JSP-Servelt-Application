@@ -9,7 +9,15 @@
 <title>Listing Images</title>
 </head>
 <body>
-<h1>listing images</h1>
+<%! String form; int fileId;%>
+<% 
+	String form="<form action='FilesHandler' method='post'>"+
+				"Label: <input type='text' name='label'/><br></br>"+
+				"Caption: <input type='text' name='caption'/><br></br>"+
+				"<input type='hidden' name='feildId' value='"+fileId+"'/>"+
+				"<input type='submit' value='Update'/>";
+%>
+<h1>Listing images</h1>
 
 <table border="1">
 <tr>
