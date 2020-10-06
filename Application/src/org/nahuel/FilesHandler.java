@@ -118,5 +118,11 @@ public class FilesHandler extends HttpServlet {
 		int fileId=Integer.parseInt(request.getParameter("fileId"));
 		Files file=new FilesDAO().getFile(fileId);
 		new FilesDAO().deleteFile(fileId);
+		// logic for file deletion from fileSystem
+		File fileOnDisc = new File(path+file.getFile_name());
+		if(fileOnDisc.delete()) {
+			System.out.println("Got deleted from filesystem");
+		}
+		listingImages(request, response);
 	}
 }
