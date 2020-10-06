@@ -40,7 +40,7 @@
 				"<input type='hidden' name='action' value='updateInformation'/>"+
 				"<input type='submit' value='Update'/>";
 		out.print("<td>"+form+"</td>");
-		out.print("<td><ul><li><a href='"+request.getContextPath()+"/FilesHandler?action=viewImage&fileId"+
+		out.print("<td><ul><li><a href='"+request.getContextPath()+"/FilesHandler?action=viewImage&fileId="+
 				file.getId()+"'>View Image</a></li></ul></td></tr>");
 				
 	}
