@@ -19,7 +19,7 @@ import org.nahuel.hibernate.entity.Files;
 
 
 @WebServlet("/ImageUpload")
-public class ImageUpload extends HttpServlet {
+public class FilesHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public String path="D:/JavaCourseMaterial/Images/";
 	
