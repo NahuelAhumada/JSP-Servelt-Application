@@ -14,7 +14,7 @@
 	String form="<form action='FilesHandler' method='post'>"+
 				"Label: <input type='text' name='label'/><br></br>"+
 				"Caption: <input type='text' name='caption'/><br></br>"+
-				"<input type='hidden' name='feildId' value='"+fileId+"'/>"+
+				"<input type='hidden' name='filedId' value='"+fileId+"'/>"+
 				"<input type='submit' value='Update'/>";
 %>
 <h1>Listing images</h1>
@@ -35,7 +35,8 @@
 				"<li> File name: "+file.getFile_name()+"</li>"+
 				"<li> File label: "+file.getLabel()+"</li>"+
 				"<li> File caption: "+file.getCaption()+"</li>"+
-				"</ul></td></tr>"
+				"</ul></td>"+
+				"<td>"+form+"</td></tr>"
 				);
 	}
 %>
